@@ -35,33 +35,32 @@ exports.create = function (req, res) {
   };
 
   var valid_res = v.validate(new_employee, uuid_Schema);
-  // console.log(valid_res.valid)
   if (valid_res.valid === false) {
     res.status(400).json({
       error: true, message: "Return 400 when any request body field type is not match"
     });
+  } else {
+    const { v4: uuidv4 } = require('uuid');
+    new_employee.uuid = uuidv4();;
+    //handles null error
+    if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
+      res.status(400).send({ error: true, message: 'Please provide all required field' });
+    } else {
+      Employee.create(new_employee, function (err, employee) {
+        if (err)
+          res.send(err);
+        res.json(
+          {
+            error: false,
+            message: "Employee added successfully!",
+            data: employee,
+            uuid: new_employee.uuid
+          });
+      });
+    }
+
   }
   // ------
-
-  const { v4: uuidv4 } = require('uuid');
-  new_employee.uuid = uuidv4();;
-  console.log(new_employee.uuid.length);
-  //handles null error
-  if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
-    res.status(400).send({ error: true, message: 'Please provide all required field' });
-  } else {
-    Employee.create(new_employee, function (err, employee) {
-      if (err)
-        res.send(err);
-      res.json(
-        {
-          error: false,
-          message: "Employee added successfully!",
-          data: employee,
-          uuid: new_employee.uuid
-        });
-    });
-  }
 
 };
 
@@ -167,5 +166,5 @@ exports.delete = function (req, res) {
 
 
 
- 
+
 }
