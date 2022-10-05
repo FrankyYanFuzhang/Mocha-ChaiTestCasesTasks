@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "8f22b677-4f45-4956-af43-a44143e5122d",
+		"name": "Mocha_Test_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22666260"
+	},
+	"item": [
+		{
+			"name": "Create_200",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"johnDoe112\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"johnDoeWrong\",\r\n    \"tel\": 12341234,\r\n    \"age\": \"18\",\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read_200",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": \"90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read_400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 00000000000000000000000000000000\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read_404",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": \"00000000000000000000000000000000\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_200",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f\",\r\n    \"name\": \"tom lee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_400",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f\",\r\n    \"name\": \"tom lee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_404",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"00000000000000000000000000000000\",\r\n    \"name\": \"tom lee\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_200",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_400",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":00000000000000000000000000000000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_404",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"00000000000000000000000000000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

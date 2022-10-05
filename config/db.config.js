@@ -5,7 +5,7 @@ const dbConn = mysql.createConnection({
 	host: 'localhost',
 	port: '3306',
 	user: 'root',
-	password: 'YourPass',
+	password: 'Frank2022',
 	database: 'hkscp_db'
 });
 dbConn.connect(function (err) {
