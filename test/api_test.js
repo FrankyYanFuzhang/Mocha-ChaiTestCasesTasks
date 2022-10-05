@@ -4,56 +4,52 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 const { get } = require('../server');
 let app = require('../server');
-app.port = 3000;
+app.port = 3306;
 
 chai.use(chaiHttp);
 let should = chai.should();
 
 // var expect = chai.expect;
 
-var uuid_global = "";
+var id_global = "";
 
 describe('/POST: Create function!', () => {
 
     let user = {
-        "first_name": "johnDoe Test Create",
-        "last_name": "Doe Create",
-        "email": "johndoe@gmail.com",
-        "phone": "1234-1234",
+        "name": "johnDoe",
+        "tel": "1234-1234",
+        "age": 18,
+        "isMarried": false,
         "sex": "Male",
-        "organization": "BR Softech Pvt Ltd",
-        "designation": "Full Stack Developer",
-        "salary": 1000
+        "address": "Tai Po, hk"
     };
 
     let user_Wrong = {
-        "first_name": "John_Wrong",
-        "last_name": "Doe",
-        "email": "johndoe@gmail.com",
-        "phone": 12341234,  // wrong filed type
+        "name": "johnDoe",
+        "tel": "1234-1234",
+        "age": "18",    //wrong data type
+        "isMarried": false,
         "sex": "Male",
-        "organization": "BR Softech Pvt Ltd",
-        "designation": "Full Stack Developer",
-        "salary": "1000" // wrong filed type 
+        "address": "Tai Po, hk"
     };
 
     it('Expect to Return 200 and add successfully', (done) => {
         chai.request(app)
-            .post('/api/create')
+            .post('/profile/create')
             .send(user)
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
                 res.body.should.have.property('message').eql('Employee added successfully!');
-                res.body.should.have.property('uuid');
-                res.body.uuid.length.should.be.eql(36);
-                uuid_global = res.body.uuid;
+                res.body.should.have.property('id');
+                res.body.id.length.should.be.eql(36);
+                id_global = res.body.id;
                 done();
             })
     });
     it('Expect to Return 400 since body field type is not match', (done) => {
         chai.request(app)
-            .post('/api/create')
+            .post('/profile/create')
             .send(user_Wrong)
             .end((err, res) => {
                 res.should.have.status(400);
@@ -66,31 +62,33 @@ describe('/Get: Read function!', () => {
 
     it('Expect 200 and get a user', (done) => {
 
-        let uuid = {
-            "uuid": uuid_global
+        let id = {
+            "id": id_global
         }
+        console.log("test-id:!",id);
         chai.request(app)
-            .get("/api/read")
-            .send(uuid)
+            .post("/profile/read")
+            .send(id)
             .end((err, res) => {
+                console.log(id);
                 res.should.have.status(200);
                 employee_example = res.body[0];
-                employee_example.should.have.property('first_name');
-                employee_example.should.have.property('last_name');
-                employee_example.should.have.property('email');
+                employee_example.should.have.property('name');
+                employee_example.should.have.property('tel');
+                employee_example.should.have.property('age');
                 done();
             })
     })
 
     it('Expect 400 since id is not string', (done) => {
 
-        let uuid = {
-            "uuid": 00000000000000000000000000000000
+        let id = {
+            "id": 00000000000000000000000000000000
         };
 
         chai.request(app)
-            .get("/api/read")
-            .send(uuid)
+            .post("/profile/read")
+            .send(id)
             .end((err, res) => {
                 res.should.have.status(400);
 
@@ -100,13 +98,13 @@ describe('/Get: Read function!', () => {
 
     it('Expect 404 since id is not find', (done) => {
 
-        let uuid = {
-            "uuid": "00000000-0000-0000-0000-000000000000"
+        let id = {
+            "id": "00000000-0000-0000-0000-000000000000"
         };
 
         chai.request(app)
-            .get("/api/read")
-            .send(uuid)
+            .post("/profile/read")
+            .send(id)
             .end((err, res) => {
                 res.should.have.status(404);
 
@@ -118,12 +116,11 @@ describe('/Get: Read function!', () => {
 describe('/PUT: update function!', () => {
     it('1: Expect 200 status return!', (done) => {
         let employee = {
-            "uuid": uuid_global,
-            "first_name": "john Update!",
-            "last_name": "Doe Update!"
+            "id": id_global,
+            "name": "tom lee",
         }
         chai.request(app)
-            .put("/api/update")
+            .post("/profile/update")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -133,12 +130,12 @@ describe('/PUT: update function!', () => {
 
     it('2: Expect 400 when any field type is not match.', (done) => {
         let employee = {
-            "uuid": uuid_global,
-            "first_name": 12341234, // not right field type.
-            "last_name": "Lee"
+            "id": id_global,
+            "tel": 12341234, // not right field type.
+            "name": "tom lee"
         }
         chai.request(app)
-            .put("/api/update")
+            .post("/profile/update")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(400);
@@ -146,14 +143,13 @@ describe('/PUT: update function!', () => {
             })
     })
 
-    it('3: Expect 404 status since no such uuid cound be find!', (done) => {
+    it('3: Expect 404 status since no such id cound be find!', (done) => {
         let employee = {
-            "uuid": "00000000-0000-0000-0000-00000000",
-            "first_name": "Tom_test gogo!",
-            "last_name": "Lee"
+            "id": "00000000-0000-0000-0000-00000000",
+            "name": "tom lee"
         }
         chai.request(app)
-            .put("/api/update")
+            .post("/profile/update")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(404);
@@ -164,10 +160,10 @@ describe('/PUT: update function!', () => {
 describe('/Delete: update function!', () => {
     it('1: Expect 200 status return!', (done) => {
         let employee = {
-            "uuid": uuid_global,
+            "id": id_global,
         }
         chai.request(app)
-            .del("/api/delete")
+            .del("/profile/delete")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -177,10 +173,10 @@ describe('/Delete: update function!', () => {
 
     it('2: Expect 400 when any field type is not match.', (done) => {
         let employee = {
-            "uuid": 12345678901234567890123456789012,
+            "id": 12345678901234567890123456789012,
         }
         chai.request(app)
-            .del("/api/delete")
+            .del("/profile/delete")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(400);
@@ -188,12 +184,12 @@ describe('/Delete: update function!', () => {
             })
     })
 
-    it('3: Expect 404 status since no such uuid cound be find!', (done) => {
+    it('3: Expect 404 status since no such id cound be find!', (done) => {
         let employee = {
-            "uuid": uuid_global,
+            "id": id_global,
         }
         chai.request(app)
-            .del("/api/delete")
+            .del("/profile/delete")
             .send(employee)
             .end((err, res) => {
                 res.should.have.status(404);
