@@ -92,6 +92,16 @@ exports.findById = function (req, res) {
             else if (employee.length === 0) {
                 res.status(404).json({ message: "Cannot find this user!" });
             } else {
+                
+                if(employee[0].isMarried==1){
+                    employee[0].isMarried=true;
+                }else if(employee[0].isMarried==0){
+                    employee[0].isMarried=false;
+                }
+                
+                delete employee[0].created_at;
+                delete employee[0].updated_at;
+
                 res.json(employee);
             }
         });
