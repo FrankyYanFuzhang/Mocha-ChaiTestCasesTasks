@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "2b8cf441-8433-4fd3-9200-486520ebf812",
+		"name": "Valid_sql_Injection_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22666260"
+	},
+	"item": [
+		{
+			"name": "sql_injection_valid_1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"this is a valid name\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql_injection_valid_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"12345!@^&*()_\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql_injection_valid_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"account@gmial.com\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql_injection_valid_4",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"password12345!.~\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql_injection_valid_5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"below are invalid string\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sql_injection_valid_6",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f\",\r\n    \"tel\": \"1234-1234\",\r\n    \"age\": 18,\r\n    \"isMarried\": false,\r\n    \"sex\": \"Male\",\r\n    \"address\": \"Tai Po, hk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3356/profile/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3356",
+					"path": [
+						"profile",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
