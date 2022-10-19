@@ -133,7 +133,7 @@ exports.delete = function (req, res) {
         });
     }
 
-}
+};
 
 exports.findAll = function (req, res) {
     Employee.findAll(function (err, employee) {
