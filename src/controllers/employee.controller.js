@@ -1,61 +1,21 @@
 'use strict';
-const Employee = require('../models/employee.model');
-const Validator = require('jsonschema').Validator;
-const v = new Validator();
-
-function obVali(ob) {
-
-    var uuid_Schema = {
-        "type": "object",
-        "properties": {
-            "name": { "type": "string" },
-            "tel": { "type": "string" },
-            "age": { "type": "number" },
-            "isMarried": { "type": "boolean" },
-            "sex": { "type": "string" },
-            "address": { "type": "string" },
-        },
-        "required": ["name", "tel", "age",
-            "isMarried", "sex", "address"]
-    };
-
-    var valid_res = v.validate(ob, uuid_Schema);
-
-    return valid_res.valid;
-}
-
-function idVali(ob) {
-
-    var uuid_Schema = {
-        "type": "object",
-        "properties": {
-            "id": { "type": "string" },
-        },
-        "required": ["id"]
-    };
-
-    var valid_res = v.validate(ob, uuid_Schema);
-    return valid_res.valid;
-}
-
-exports.findAll = function (req, res) {
-    Employee.findAll(function (err, employee) {
-        console.log('controller')
-        if (err)
-            res.send(err);
-        console.log('res', employee);
-        res.send(employee);
-    });
-};
+const Employee = require('../models/employee.model')
+const sqlInjectionSchema = require('../../schema/sqlInjectionSchema.json')
+const reqBodyJsonSchema = require('../../schema/reqBodyJsonSchema.json')
+var Ajv = require('ajv')
+const ajv = new Ajv({schemas:[sqlInjectionSchema,reqBodyJsonSchema]});
+require("ajv-keywords")(ajv, "transform")
 
 exports.create = function (req, res) {
     const new_employee = new Employee(req.body);
-    if (obVali(new_employee) === false) {
+    var validate = ajv.compile(reqBodyJsonSchema.create)
+    if (validate(new_employee) === false) {
+        console.log(validate.errors)
         res.status(400).json({
             error: true, message: "Return 400 when any request body field type is not match"
         });
     } else {
-        const { v4: uuidv4 } = require('uuid');
+        const { v4: uuidv4, v3 } = require('uuid');
         new_employee.id = uuidv4();;
         //handles null error
         if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
@@ -64,7 +24,7 @@ exports.create = function (req, res) {
             Employee.create(new_employee, function (err, employee) {
                 if (err)
                     res.send(err);
-                console.log("test",employee);
+                console.log("test", employee);
                 res.json(
                     {
                         error: false,
@@ -74,31 +34,30 @@ exports.create = function (req, res) {
                     });
             });
         }
-
     }
-    // ------
 
 };
 
 exports.findById = function (req, res) {
 
-    if (idVali(req.body) === false) {
+    var validate = ajv.compile(reqBodyJsonSchema.select)
+    if (validate(req.body) === false) {
         res.status(400).json({ message: "Return 400 when id is not string." });
     } else {
         Employee.findById(req.body.id, function (err, employee) {
-            console.log("controller test",req.body);
+            console.log("controller test", req.body);
             if (err)
                 res.send(err);
             else if (employee.length === 0) {
                 res.status(404).json({ message: "Cannot find this user!" });
             } else {
-                
-                if(employee[0].isMarried==1){
-                    employee[0].isMarried=true;
-                }else if(employee[0].isMarried==0){
-                    employee[0].isMarried=false;
+
+                if (employee[0].isMarried == 1) {
+                    employee[0].isMarried = true;
+                } else if (employee[0].isMarried == 0) {
+                    employee[0].isMarried = false;
                 }
-                
+
                 delete employee[0].created_at;
                 delete employee[0].updated_at;
 
@@ -129,13 +88,14 @@ exports.update = function (req, res) {
                     }
                 }
 
-                if(emp.isMarried===0){
-                    emp.isMarried=false;
-                }else if(emp.isMarried===1){
-                    emp.isMarried=true;
+                if (emp.isMarried === 0) {
+                    emp.isMarried = false;
+                } else if (emp.isMarried === 1) {
+                    emp.isMarried = true;
                 }
 
-                if (obVali(emp) === false) {
+                var validate = ajv.compile(reqBodyJsonSchema.update)
+                if (validate(emp) === false) {
                     res.status(400).json({
                         error: true, message: "Return 400 when any request body field type is not match"
                     });
@@ -154,7 +114,8 @@ exports.update = function (req, res) {
 };
 
 exports.delete = function (req, res) {
-    if (idVali(req.body) === false) {
+    var validate = ajv.compile(reqBodyJsonSchema.delete)
+    if (validate(req.body) === false) {
         res.status(400).json({ message: "Return 400 when id is not string." });
     } else {
         Employee.findById(req.body.id, function (err, employee) {
@@ -172,7 +133,14 @@ exports.delete = function (req, res) {
         });
     }
 
-
-
-
 }
+
+exports.findAll = function (req, res) {
+    Employee.findAll(function (err, employee) {
+        console.log('controller')
+        if (err)
+            res.send(err);
+        console.log('res', employee);
+        res.send(employee);
+    });
+};

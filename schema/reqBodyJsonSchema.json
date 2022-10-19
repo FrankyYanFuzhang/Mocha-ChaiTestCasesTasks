@@ -1,0 +1,251 @@
+{
+    "create": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "type": "object",
+        "properties": {
+            "name": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "tel": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "age": {
+                "type": "number"
+            },
+            "isMarried": {
+                "type": "boolean"
+            },
+            "sex": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "address": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "tel",
+            "age",
+            "isMarried",
+            "sex",
+            "address"
+        ]
+    },
+    "select": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "type": "object",
+        "properties": {
+            "id": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            }
+        },
+        "required": [
+            "id"
+        ]
+    },
+    "update": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "type": "object",
+        "properties": {
+            "name": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "tel": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "age": {
+                "type": "number"
+            },
+            "isMarried": {
+                "type": "boolean"
+            },
+            "sex": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            },
+            "address": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            }
+        },
+        "required": [
+            "name",
+            "tel",
+            "age",
+            "isMarried",
+            "sex",
+            "address"
+        ]
+    },
+    "delete": {
+        "$schema": "http://json-schema.org/draft-07/schema",
+        "type": "object",
+        "properties": {
+            "id": {
+                "allOf": [
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                    },
+                    {
+                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                    }
+                ]
+            }
+        },
+        "required": [
+            "id"
+        ]
+    }
+    
+}

@@ -1,0 +1,33 @@
+{
+  "$id": "sqlInjectionSchema.json",
+  "definitions": {
+   
+   
+    "sqlPattern_0": {
+      "type": "string",
+      "pattern": "^(?!.*(((OR|HAVING|AND|WHERE)\\s+(\\w+|\\d+)=(\\w+|\\d+))|(ORDER\\s+BY\\s+\\d+)|(RLIKE\\s+\\(SELECT\\s+\\(CASE\\s+WHEN\\s+\\(\\d+=\\d+\\))|(IF\\(\\d+=\\d+\\)\\s+SELECT\\s+)|(AND\\s+\\(SELECT\\s+SUBSTRING\\())).*$",
+      "transform":["toUpperCase"]
+    },
+    "sqlPattern_1": {
+      "type": "string",
+      "pattern": "^(?!.*((OR\\s+')|('OR\\s+'1)|(OR\\s+1\\s+--)|(\"OR\\s+\"\"\\s+=\\s+\")|(\"OR\\s+1\\s+=\\s+1\\s+--)|('OR\\s+''\\s+=\\s+')|('=')|('LIKE')|('=0--+)|(OR\\s+1=1)|('OR\\s+'x'='x)|('AND\\s+id\\s+IS\\s+NULL;\\s+--)|('''''''''''''UNION\\s+SELECT\\s+'2)|(@variable)|(;%00)|(AND\\s+[01])|(AND\\s+((true)|(false)))|(1-false)|(1-true)|(select)|(ORDER\\s+BY)|(GROUP\\s+BY)|((['\"]|--)\\s+or\\s+[\"#])|((1*56)|(-2))|('\\s+AND\\s+MID)|(Finding\\s+the\\s+table\\s+name)|(WAITFOR\\s+DELAY)|(sleep\\(\\d)|(([#\\+%])|(\\/\\*)|(\\/\\*…\\*\\/)|(\\|\\|)|(--)|(;%00)))).*$",
+      "transform":["toUpperCase"]
+    },
+    "sqlPattern_2": {
+      "type": "string",
+      "pattern":"^(?!.*((['\"]( |[-&^\\*])['\"])|((OR\\s+TRUE)|(OR\\s+([\\('\"]|1=1))|(ADMIN['\"])))).*$",
+      "transform":["toUpperCase"]
+    },
+    "sqlPattern_3": {
+      "type": "string",
+      "pattern":"^(?!.*((ORDER\\s+BY)|(UNION\\s+ALL\\s+SELECT)|(UNION\\s+SELECT)|(AND\\s+5650=CONVERT)|(AND\\s+3516=CAST)|(SELECT\\s+(.*)\\s+FROM))).*$",
+      "transform":["toUpperCase"]
+    },
+    "sqlPattern_4": {
+      "type": "string",
+      "pattern":"^(?!.*((['\"]( |[-&^\\*])['\"])|((OR\\s+TRUE)|(OR\\s+([\\('\"]|1=1))|(ADMIN['\"])))).*$",
+      "transform":["toUpperCase"]
+     
+    }
+  }
+}
