@@ -2,7 +2,7 @@ CREATE DATABASE if not exists hkscp_db;
 
 use hkscp_db;
 
----test
+--test
 CREATE TABLE IF NOT EXISTS `employees` (
 	`id` VARCHAR(255) NOT NULL,
 	`name` VARCHAR(255) NOT NULL,

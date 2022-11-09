@@ -265,7 +265,7 @@ describe('SqlInjection Test: InValid', () => {
     ]
 
     valid_obj.forEach(v => {
-        it('!InValid! SQL Injection: Expect 200 status return!', (done) => {
+        it('!InValid! SQL Injection: Expect 400 status return!', (done) => {
             chai.request(app)
                 .post("/profile/update")
                 .send(v)
@@ -276,3 +276,30 @@ describe('SqlInjection Test: InValid', () => {
         })
     })
 })
+describe('SqlInjection Test: Valid', () => {
+
+    var valid_obj = [
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' GRxOUP BY columnnames havxing 1x=1x -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' GROUP xBY columnnames havixng 1=x1x -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' GROUP BxY columnnames havixng 1=x1x -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' UNION SxELECT sum(columnname ) from tablename -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' UNION SELxECT sum(columnname ) from tablename -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' UNION SELECxT sum(columnname ) from tablename -x-" },
+        { "id": "90f1bbc6-f454-4b1a-9f2b-9a48bf1f8a1f", "name": "' UNION SELExCT sum(columnname ) from tablename -x-" },
+    ]
+
+    valid_obj.forEach(v => {
+        it('!InValid! SQL Injection: Expect 200 status return!', (done) => {
+            chai.request(app)
+                .post("/profile/update")
+                .send(v)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+                })
+        })
+    })
+})
+
+
+

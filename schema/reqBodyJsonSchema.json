@@ -6,38 +6,38 @@
             "name": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
             "tel": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
@@ -50,38 +50,38 @@
             "sex": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
             "address": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             }
@@ -102,19 +102,19 @@
             "id": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             }
@@ -130,38 +130,38 @@
             "name": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
             "tel": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
@@ -174,38 +174,38 @@
             "sex": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             },
             "address": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             }
@@ -226,19 +226,19 @@
             "id": {
                 "allOf": [
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_0"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Error_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_1"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Generic_SQL_injection"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_2"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Time_Based"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_3"
+                        "$ref": "sqlInjectionSchema.json#/definitions/Union_Select"
                     },
                     {
-                        "$ref": "sqlInjectionSchema.json#/definitions/sqlPattern_4"
+                        "$ref": "sqlInjectionSchema.json#/definitions/AuthBypass"
                     }
                 ]
             }
