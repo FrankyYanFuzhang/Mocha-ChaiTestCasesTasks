@@ -1,31 +1,10 @@
 {
   "$id": "sqlInjectionSchema.json",
   "definitions": {
-    "Error_Based": {
+    "FiveTopicIntoOne_Error_Based-Generic_SQL_injection-Time_Based-Union_Select-AuthBypass": {
       "type": "string",
-      "pattern": "^(?!.*(((OR|HAVING|AND|WHERE)\\s+(\\w+|\\d+)=(\\w+|\\d+))|(ORDER\\s+BY\\s+\\d+)|(RLIKE\\s+\\(SELECT\\s+\\(CASE\\s+WHEN\\s+\\(\\d+=\\d+\\))|(IF\\(\\d+=\\d+\\)\\s+SELECT\\s+)|(AND\\s+\\(SELECT\\s+SUBSTRING\\())).*$",
+      "pattern": "^(?!.*((['\"\\)]\\s+OR\\s+[\\('\"1]|or\\s+(true|1))|(\\(SELECT|SELECT\\s+\\d+|UNION\\s+SELECT\\s+|UNION\\s+ALL\\s+SELECT|SELECT.FROM)|(SLEEP\\(\\d+)|(ORDER\\s+BY\\s+\\d+)|(BENCHMARK\\(\\d+)|(AND\\s+SLEEP|['\"\\)]\\s+AND\\s+|[\\d'\"]\\s+AND|AND\\s+[\\('\"]|AND\\s+(\\w+|\\d+)=(\\w+|\\d+)|AND\\s+(1|0|true|false))|(admin['\"])|(WAITFOR\\s+DELAY)|(HAVING\\s+(\\d+|\\w+)=(\\d+|\\w+))|(WHERE\\s+(\\d+|\\w+)=)|(RANDOMBLOB\\(\\d+)|(OR\\s+TRUE)|(GROUP\\s+BY)|(--\\s+-|--)|('LIKE'|=LIKE\\(|'\\s+LIKE\\s+')|((\\|\\|)|('=')|('%'|%\\d+)|(\\/\\*)|(1-(FALSE|TRUE))|(Finding\\s+the\\s+table\\s+name)|;%00|'=0--|1\\*56|'\\\\\\\\\"))).*$",
       "transform":["toUpperCase"]
-    },
-    "Generic_SQL_injection": {
-      "type": "string",
-      "pattern": "^(?!.*((OR\\s+')|('OR\\s+'1)|(OR\\s+1\\s+--)|(\"OR\\s+\"\"\\s+=\\s+\")|(\"OR\\s+1\\s+=\\s+1\\s+--)|('OR\\s+''\\s+=\\s+')|('=')|('LIKE')|('=0--+)|(OR\\s+1=1)|('OR\\s+'x'='x)|('AND\\s+id\\s+IS\\s+NULL;\\s+--)|('''''''''''''UNION\\s+SELECT\\s+'2)|(@variable)|(;%00)|(AND\\s+[01])|(AND\\s+((true)|(false)))|(1-false)|(1-true)|(select)|(ORDER\\s+BY)|(GROUP\\s+BY)|(([\"]|--)\\s+or\\s+[\"#])|((1*56)|(-2))|('\\s+AND\\s+MID)|(Finding\\s+the\\s+table\\s+name)|(WAITFOR\\s+DELAY)|(sleep\\(\\d)|((\\/\\*)|(\\/\\*…\\*\\/)|(\\|\\|)|(--)|(;%00)))).*$",
-      "transform":["toUpperCase"]
-    },
-    "Time_Based": {
-      "type": "string",
-      "pattern":"^(?!.*((['\"]( |[-&^\\*])['\"])|((OR\\s+TRUE)|(OR\\s+([\\('\"]|1=1))|(ADMIN['\"])|(OR\\s+SLEEP)|(OR\\s+BENCHMARK)))).*$",
-      "transform":["toUpperCase"]
-    },
-    "Union_Select": {
-      "type": "string",
-      "pattern":"^(?!.*((ORDER\\s+BY)|(UNION\\s+ALL\\s+SELECT)|(UNION\\s+SELECT)|(AND\\s+5650=CONVERT)|(AND\\s+3516=CAST)|(SELECT\\s+(.*)\\s+FROM))).*$",
-      "transform":["toUpperCase"]
-    },
-    "AuthBypass": {
-      "type": "string",
-      "pattern":"^(?!.*((['\"]( |[-&^\\*])['\"])|((OR\\s+TRUE)|(OR\\s+([\\('\"]|1=1))|(ADMIN['\"])))).*$",
-      "transform":["toUpperCase"]
-     
     }
   }
 }

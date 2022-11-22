@@ -60,8 +60,6 @@ Employee.update = function (id, employee, result) {
 	});
 };
 
-
-
 Employee.delete = function (id, result) {
 	dbConn.query("DELETE FROM employees WHERE id = ? ", [id], function (err, res) {
 		if (err) {
