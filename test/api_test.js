@@ -231,9 +231,9 @@ var Valid = {
         { "id": testID, "name": "RLIKE (SxELECT (CASE WHEN (4346=4346) THEN 0x61646d696e ELSE 0x28 END)) ANDx 'Txws'=x'" },
     ],
     "case-20.2": [
-        { "id": testID, "name": "axnd (sxelect substring(@@version,1,1))='X'" },
-        { "id": testID, "name": "anxd (selexct substring(@@version,1,1))='X'" },
-        { "id": testID, "name": "axnd (selecxt substring(@@version,1,1))='X'" },
+        { "id": testID, "name": "axnd (sxelect substring(@x@version,1,1))='X'" },
+        { "id": testID, "name": "anxd (selexct substring(@x@version,1,1))='X'" },
+        { "id": testID, "name": "axnd (selecxt substring(@x@version,1,1))='X'" },
     ],
     "case-21.2": [
         { "id": testID, "name": "AxND (SELECxT * FROM (SxELECT(SLEEPx(5)))bAKL) AxND 'vRxe'=x'vRxe" },
@@ -275,9 +275,9 @@ var Valid = {
         { "id": testID, "name": "'''''''''''''UNIxON SELECT '2" },
     ],
     "case-29.2": [
-        { "id": testID, "name": "UNIxON SELECT @@VERSION,SxLEEP(5),USER(),BENxCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
-        { "id": testID, "name": "UNION SxELECT @@VERSION,SLExEP(5),USER(),BENCHMARKx(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
-        { "id": testID, "name": "UNION SELExCT @@VERSION,SLEEPx(5),USER(),BxENCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
+        { "id": testID, "name": "UNIxON SELECT @x@VERSION,SxLEEP(5),USER(),BENxCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
+        { "id": testID, "name": "UNION SxELECT @x@VERSION,SLExEP(5),USER(),BENCHMARKx(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
+        { "id": testID, "name": "UNION SELExCT @x@VERSION,SLEEPx(5),USER(),BxENCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15" },
     ],
     "case-30.2": [
         { "id": testID, "name": "UNION ALL SxELECT 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15-x-" },
@@ -370,14 +370,14 @@ var Valid = {
         { "id": testID, "name": "ORDxER BY 1,SxLEEP(5),BENCxHMARK(1000000,MD5('A')),4,5,6,7,8,9,10,11,12,13,14,15-x-" },
     ],
     "case-48.2": [
-        { "id": testID, "name": "UNION SELECxT @@VERSION,SxLEEP(5),USER(),BENCHMARKx(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
-        { "id": testID, "name": "UNION SELxECT @@VERSION,SLExEP(5),USER(),BENCHMxARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
-        { "id": testID, "name": "UNION SxELECT @@VERSION,SLEEPx(5),USER(),BxENCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
+        { "id": testID, "name": "UNION SELECxT @x@VERSION,SxLEEP(5),USER(),BENCHMARKx(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
+        { "id": testID, "name": "UNION SELxECT @x@VERSION,SLExEP(5),USER(),BENCHMxARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
+        { "id": testID, "name": "UNION SxELECT @x@VERSION,SLEEPx(5),USER(),BxENCHMARK(1000000,MD5('A')),5,6,7,8,9,10,11,12,13,14,15#" },
     ],
     "case-49.2": [
-        { "id": testID, "name": "UNION ALL xSELECT @@VERSION,USER(),SLEEPx(5),BExNCHMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
-        { "id": testID, "name": "UNION ALL SELxECT @@VERSION,USER(),SLExEP(5),BENCHMxARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
-        { "id": testID, "name": "UNION ALL SELExCT @@VERSION,USER(),SxLEEP(5),BENCHMARKx(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL xSELECT @x@VERSION,USER(),SLEEPx(5),BExNCHMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL SELxECT @x@VERSION,USER(),SLExEP(5),BENCHMxARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL SELExCT @x@VERSION,USER(),SxLEEP(5),BENCHMARKx(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
     ],
     "case-50.2": [
         { "id": testID, "name": "1' ORDER BYx 1,2,3-x-+" },
@@ -420,9 +420,9 @@ var Valid = {
         { "id": testID, "name": "ORDExR BY 1,SLEEPx(5),BENxCHMARK(1000000,MD5('A')),4,5,6,7,8,9,10,11,12,13,14,15-x-" },
     ],
     "case-58.2": [
-        { "id": testID, "name": "UNION ALL SxELECT @@VERSION,USER(),SLxEEP(5),BENCHMARKx(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
-        { "id": testID, "name": "UNION ALL SELxECT @@VERSION,USER(),SLExEP(5),BENCHxMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
-        { "id": testID, "name": "UNION ALL SELECxT @@VERSION,USER(),SLEEPx(5),BExNCHMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL SxELECT @x@VERSION,USER(),SLxEEP(5),BENCHMARKx(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL SELxECT @x@VERSION,USER(),SLExEP(5),BENCHxMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
+        { "id": testID, "name": "UNION ALL SELECxT @x@VERSION,USER(),SLEEPx(5),BExNCHMARK(1000000,MD5('A')),NULL,NULL,NULL,NULL,NULL-x-" },
     ],
     "case-59.2": [
         { "id": testID, "name": "AnD SxLEEP(5)-x-" },
@@ -460,9 +460,9 @@ var Valid = {
         { "id": testID, "name": "' anxd 1 in (sxelect min(name) from sysobjects where xtype = 'U' anxd name > '.') -x-" },
     ],
     "case-66.2": [
-        { "id": testID, "name": "xandx (sxelect substring(@@version,1,1))='X'" },
-        { "id": testID, "name": "anxd (selxect substring(@@version,1,1))='X'" },
-        { "id": testID, "name": "xandx (selexct substring(@@version,1,1))='X'" },
+        { "id": testID, "name": "xandx (sxelect substring(@x@version,1,1))='X'" },
+        { "id": testID, "name": "anxd (selxect substring(@x@version,1,1))='X'" },
+        { "id": testID, "name": "xandx (selexct substring(@x@version,1,1))='X'" },
     ],
     "case-67.2": [
         { "id": testID, "name": "AND x(SELECxT * FROM (SELECxT(SLEEPx(5)))bAKL) ANxD 'vRxe'=x'vRxe" },
