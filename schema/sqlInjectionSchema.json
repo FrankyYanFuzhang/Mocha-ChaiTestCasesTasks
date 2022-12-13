@@ -3,7 +3,7 @@
 	"definitions": {
 		"FiveTopicIntoOne_Error_Based-Generic_SQL_injection-Time_Based-Union_Select-AuthBypass": {
 			"type": "string",
-			"pattern": "^(?!.*((['\"\\)]\\s+OR\\s+[\\('\"1]|or\\s+(TRUE|1))|(\\(SELECT|SELECT\\s+\\d+|UNION\\s+SELECT\\s+|UNION\\s+ALL\\s+SELECT|SELECT.FROM)|(SLEEP\\(\\d+)|(ORDER\\s+BY\\s+\\d+)|(BENCHMARK\\(\\d+)|(AND\\s+SLEEP|['\"\\)]\\s+AND\\s+|[\\d'\"]\\s+AND|AND\\s+[\\('\"]|AND\\s+(\\w+|\\d+)=(\\w+|\\d+)|AND\\s+(1|0|TRUE|FALSE))|(admin['\"])|(WAITFOR\\s+DELAY)|(HAVING\\s+(\\d+|\\w+)=(\\d+|\\w+))|(WHERE\\s+(\\d+|\\w+)=)|(RANDOMBLOB\\(\\d+)|(OR\\s+TRUE)|(GROUP\\s+BY)|(--\\s+-|--)|('LIKE'|=LIKE\\(|'\\s+LIKE\\s+')|((\\|\\|)|('=')|('%'|%\\d+)|(\\/\\*)|(1-(FALSE|TRUE))|(Finding\\s+the\\s+table\\s+name)|(@@)|;%00|'=0--|1\\*56|'\\\\\\\\\"))).*$",
+			"pattern": "^(?!.*((\\s+OR\\s+(\\d+|\\w+)=(\\d+|\\w+)|['\"\\)]\\s+OR\\s+[\\('\"1]|\\s+OR\\s+(TRUE|1)\\s+)|(\\(SELECT\\s+|SELECT\\s+\\d+|\\s+UNION\\s+SELECT\\s+|\\(UNION ALL SELECT|\\s+UNION\\s+ALL\\s+SELECT\\s+|SELECT\\s+.\\s+FROM\\s+)|(SLEEP\\(\\d+)|(\\s+ORDER\\s+BY\\s+\\d+)|(BENCHMARK\\(\\d+)|(\\s+AND\\s+SLEEP\\s+|['\"\\)]\\s+AND\\s+|[\\d'\"]\\s+AND\\s+|\\s+AND\\s+[\\('\"]|\\s+AND\\s+(\\w+|\\d+)=(\\w+|\\d+)|\\s+AND\\s+(1|0|(TRUE)|(FALSE)))|(\\s+admin['\"])|(\\s+WAITFOR\\s+DELAY\\s+)|(\\s+HAVING\\s+(\\d+|\\w+)=(\\d+|\\w+))|(\\s+WHERE\\s+(\\d+|\\w+)=)|(\\s+RANDOMBLOB\\(\\d+)|(\\s+GROUP\\s+BY\\s+)|(--\\s+-|--)|('LIKE'|=LIKE\\(|'\\s+LIKE\\s+')|((\\|\\|)|(@@)|('=')|('%'|%\\d+)|(\\/\\*)|(1-(FALSE|TRUE))|(\\s+Finding\\s+the\\s+table\\s+name\\s+)|;%00|'=0--|1\\*56|'\\\\\\\\\"|-2|--\\+))).*$",
 			"transform":["toUpperCase"]
     }
   }
